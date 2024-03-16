@@ -1,0 +1,35 @@
+css
+/* DessertForm.module.css */
+
+.form {
+    width: 300px;
+}
+
+.label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input,
+.textarea {
+  width: 360px;
+  padding: 8px;
+  margin-top: 4px;
+
+}
+
+.button {
+    width: 360px;
+    padding: 10px;
+    margin: 5px 0;
+    box-sizing: border-box;
+    background-color: #FFA500;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #ffa600;
+}

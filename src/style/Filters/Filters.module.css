@@ -1,0 +1,10 @@
+.containerFilter {
+  width: 100%;
+  display: flex;
+}
+
+.filter {
+  width: 33.3%;
+  display: grid;
+  margin: 40px;
+}

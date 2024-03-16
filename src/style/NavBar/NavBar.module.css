@@ -1,0 +1,88 @@
+.container {
+  background-color: red;
+  display: flex;
+  width: 100%;
+  height: 90px;
+  box-shadow: 0px 0px 5px 1px black;
+}
+
+.logo {
+  width: 30%;
+  display: flex;
+}
+.log {
+  margin-left: 20px;
+  margin-top: 20px;
+  width: 50px;
+  height: 50px;
+}
+
+.logo h1 {
+  margin-top: 30px;
+  font-size: 20px;
+  color: white;
+}
+
+.search {
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+  width: 50%;
+}
+
+.search input {
+  color: black;
+  border: 2px solid #f1c40f;
+  border-radius: 10px;
+  padding: 10px 50px;
+  background: white;
+  max-width: 190px;
+}
+
+.search input:active {
+  box-shadow: 2px 2px 15px #4eddfa inset;
+}
+
+.search button {
+  color: black;
+  margin-left: 8px;
+  padding: 0.7em 1em;
+  font-size: 13px;
+  border-radius: 0.5em;
+  background: #ffcb1d;
+  border: 2px solid black;
+  transition: all 0.3s;
+}
+
+.search button:hover {
+  border: 2px solid white;
+}
+
+.search button:active {
+  box-shadow: 4px 4px 12px #c5c5c5, -4px -4px 12px #ffffff;
+}
+
+.link {
+  margin-top: 25px;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+}
+
+.link button {
+  color: black;
+  padding: 0.7em 1.7em;
+  font-size: 13px;
+  border-radius: 0.5em;
+  background: #ffcb1d;
+  border: 2px solid white;
+  transition: all 0.3s;
+}
+
+.link button:hover {
+  border: 2px solid black;
+}
+
+.link button:active {
+  box-shadow: 4px 4px 12px #c5c5c5, -4px -4px 12px #ffffff;
+}
