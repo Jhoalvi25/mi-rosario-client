@@ -38,7 +38,7 @@ export function getDessertByName(name) {
 
 export function getDetail(id) {
   return async function (dispatch) {
-    var json = await axios.get("https://mi-rosario-servicios.onrender.com" + id);
+    var json = await axios.get("https://mi-rosario-servicios.onrender.com/api/dessert/" + id);
 
     try {
       return dispatch({
