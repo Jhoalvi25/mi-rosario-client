@@ -5,9 +5,9 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import validationSchema from "../../validations/loginValidation";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { loginUser } from "../../redux/actions";
+import Swal from "sweetalert2";
 import { useDispatch } from "react-redux";
-
+import axios from "axios";
 
 export default function Login() {
   const initialValues = {
@@ -28,10 +28,39 @@ export default function Login() {
   const submitLogin = (e) => {
     e.preventDefault();
 
-    dispatch(loginUser(user)).then((data) => {
-      history.push("/admin/panel");
-    });
-    setUser(initialValues);
+    const loginUser = (user) => {
+      return async (dispatch) => {
+        try {
+          const config = {
+            url: `http://localhost:3001/api/login`,
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            data: user,
+          };
+          await axios(config).then(
+            function (value) {
+              // Success!
+              history.push("/admin/panel");
+              return value.data;
+            },
+            function (err) {
+              // Error!
+              throw new Error(err.response.data);
+            }
+          );
+        } catch (err) {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Alguno de los datos introducidos son incorrectos!",
+          });
+        }
+      };
+    };
+
+    dispatch(loginUser(user));
   };
 
   return (

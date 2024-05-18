@@ -155,7 +155,7 @@ export const loginUser = (user) => {
         }
       );
     } catch (err) {
-      throw new Error(err.message);
+      alert("Datos incorrectos")
     }
   };
 };
