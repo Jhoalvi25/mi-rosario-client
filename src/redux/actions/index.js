@@ -1,11 +1,13 @@
 import axios from "axios";
 
+const deploy = "https://mi-rosario-servicios.onrender.com"
+
 /************ Obtener todos los postres***************/
 
 export function getDesserts() {
   return async function (dispatch) {
     try {
-      var json = await axios.get("http://localhost:3001/api/dessert", {});
+      var json = await axios.get("https://mi-rosario-servicios.onrender.com/api/dessert", {});
       return dispatch({
         type: "GET_DESSERTS",
         payload: json.data,
@@ -21,9 +23,7 @@ export function getDesserts() {
 export function getDessertByName(name) {
   return async function (dispatch) {
     try {
-      var json = await axios.get(
-        "http://localhost:3001/api/dessert?name=" + name
-      );
+      var json = await axios.get("https://mi-rosario-servicios.onrender.com/api/dessert?name=" + name);
       return dispatch({
         type: "GET_DESSERT_BY_NAME",
         payload: json.data,
@@ -38,7 +38,7 @@ export function getDessertByName(name) {
 
 export function getDetail(id) {
   return async function (dispatch) {
-    var json = await axios.get("http://localhost:3001/api/dessert/" + id);
+    var json = await axios.get("https://mi-rosario-servicios.onrender.com" + id);
 
     try {
       return dispatch({
@@ -64,8 +64,7 @@ export function cleanDetail() {
 export function postOrder(payload) {
   return async function (dispatch) {
     try {
-      const order = await axios.post(
-        "http://localhost:3001/api/order",
+      const order = await axios.post("https://mi-rosario-servicios.onrender.com/api/order",
         payload
       );
 
@@ -110,7 +109,7 @@ export const sendOrder = (order) => {
   return async (dispatch) => {
     try {
       const config = {
-        url: `http://localhost:3001/api/order`,
+        url: `${deploy}/api/order`,
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -137,7 +136,7 @@ export const loginUser = (user) => {
   return async (dispatch) => {
     try {
       const config = {
-        url: `http://localhost:3001/api/login`,
+        url: `${deploy}/api/login`,
         method: "POST",
         headers: {
           "content-type": "application/json",
